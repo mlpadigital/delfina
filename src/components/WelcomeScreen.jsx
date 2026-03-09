@@ -46,12 +46,13 @@ const cometPath = [
 
 const COMET_DURATION = 3;
 
-const WelcomeScreen = ({ isOpened, onOpen, onStartMusic }) => {
+const WelcomeScreen = ({ isOpened, onOpen, onStartMusic, onInteract }) => {
   const [stage, setStage] = useState('idle');
   // idle → flap → comet → burst → rain → done
 
   const handleClick = () => {
     if (stage !== 'idle') return;
+    if (onInteract) onInteract();
     setStage('flap');
     setTimeout(() => {
       setStage('comet');

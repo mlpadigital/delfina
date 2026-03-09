@@ -12,6 +12,7 @@ function App() {
   const targetDate = "2026-04-18T21:00:00";
   const [isOpened, setIsOpened] = useState(false);
   const [isMusicStarted, setIsMusicStarted] = useState(false);
+  const [isInteracted, setIsInteracted] = useState(false);
 
   const handleOpen = () => {
     setIsOpened(true);
@@ -19,6 +20,10 @@ function App() {
 
   const handleStartMusic = () => {
     setIsMusicStarted(true);
+  };
+
+  const handleInteract = () => {
+    setIsInteracted(true);
   };
 
   return (
@@ -44,7 +49,12 @@ function App() {
       </svg>
 
       {/* Pantalla de Bienvenida (Sobre Virtual) */}
-      <WelcomeScreen isOpened={isOpened} onOpen={handleOpen} onStartMusic={handleStartMusic} />
+      <WelcomeScreen 
+        isOpened={isOpened} 
+        onOpen={handleOpen} 
+        onStartMusic={handleStartMusic} 
+        onInteract={handleInteract}
+      />
 
       <main className="relative">
         <Background />
@@ -62,7 +72,7 @@ function App() {
       </main>
 
       {/* Reproductor Musical */}
-      <MusicPlayer isOpened={isOpened} isMusicStarted={isMusicStarted} />
+      <MusicPlayer isOpened={isOpened} isMusicStarted={isMusicStarted} isInteracted={isInteracted} />
     </>
   )
 }

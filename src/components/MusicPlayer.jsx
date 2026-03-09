@@ -2,23 +2,45 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Music, Pause } from 'lucide-react';
 
-const MusicPlayer = ({ isOpened, isMusicStarted }) => {
+const MusicPlayer = ({ isOpened, isMusicStarted, isInteracted }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
-  const hasAutoplayedRef = useRef(false);
+  const hasUnlockedRef = useRef(false);
+  const hasStartedRef = useRef(false);
 
-  // Cuando se indica que debe empezar la música (isMusicStarted = true), arrancarla
+  // Desbloqueo inmediato con volumen 0 para "engañar" al navegador
   useEffect(() => {
     const audioEl = audioRef.current;
-    if (!audioEl) return;
+    if (!audioEl || !isInteracted || hasUnlockedRef.current) return;
 
-    if (isMusicStarted && !hasAutoplayedRef.current) {
-      hasAutoplayedRef.current = true;
-      audioEl.volume = 0.5;
-      audioEl.play()
-        .then(() => setIsPlaying(true))
-        .catch(err => console.error('Error al reproducir:', err));
-    }
+    hasUnlockedRef.current = true;
+    audioEl.volume = 0;
+    audioEl.play()
+      .then(() => {
+        console.log('Audio desbloqueado (volumen 0)');
+        // Si por alguna razón la música ya debería estar sonando, subimos el volumen
+        if (isMusicStarted) {
+          audioEl.volume = 0.5;
+          setIsPlaying(true);
+        }
+      })
+      .catch(err => console.warn('Bloqueo preventivo de audio:', err));
+  }, [isInteracted, isMusicStarted]);
+
+  // Cuando empieza el cometa, subimos el volumen y reseteamos el tiempo si es necesario
+  useEffect(() => {
+    const audioEl = audioRef.current;
+    if (!audioEl || !isMusicStarted || hasStartedRef.current) return;
+
+    hasStartedRef.current = true;
+    audioEl.currentTime = 0; // Buscamos que empiece el tema justo con el cometa
+    audioEl.volume = 0.5;
+    audioEl.play()
+      .then(() => setIsPlaying(true))
+      .catch(err => {
+        console.error('Error al iniciar música:', err);
+        // Fallback: si falló por el delay, al menos que el botón lo permita
+      });
   }, [isMusicStarted]);
 
   useEffect(() => {
@@ -51,7 +73,7 @@ const MusicPlayer = ({ isOpened, isMusicStarted }) => {
       {/* Reproductor de audio HTML5 nativo - invisible */}
       <audio
         ref={audioRef}
-        src="/music.mp3"
+        src={`${import.meta.env.BASE_URL}music.mp3`}
         loop
         preload="auto"
       />
