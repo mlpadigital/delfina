@@ -31,8 +31,8 @@ const Information = () => {
         className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
       >
         {/* Date & Time */}
-        <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
-          <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
+        <motion.div variants={itemVariants} className="glass-card pt-14 pb-10 px-6 text-center flex flex-col items-center">
+          <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }} className="mt-4">
             <Calendar className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
           </motion.div>
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>FECHA</h3>
@@ -44,12 +44,12 @@ const Information = () => {
             <Clock className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
           </motion.div>
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>HORARIO</h3>
-          <p className="font-serif uppercase tracking-wide" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>21:00 hs</p>
+          <p className="font-serif uppercase tracking-wide" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>21:00hs</p>
         </motion.div>
 
         {/* Location */}
-        <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
-          <motion.div whileHover={{ scale: 1.2, rotate: 10 }} whileTap={{ scale: 0.9 }}>
+        <motion.div variants={itemVariants} className="glass-card pt-14 pb-10 px-6 text-center flex flex-col items-center">
+          <motion.div whileHover={{ scale: 1.2, rotate: 10 }} whileTap={{ scale: 0.9 }} className="mt-4">
             <MapPin className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
           </motion.div>
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>LUGAR</h3>
@@ -66,8 +66,8 @@ const Information = () => {
         </motion.div>
 
         {/* Gift Info */}
-        <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
-          <motion.div whileHover={{ scale: 1.3, rotate: -10 }} whileTap={{ scale: 0.9 }}>
+        <motion.div variants={itemVariants} className="glass-card pt-14 pb-10 px-6 text-center flex flex-col items-center">
+          <motion.div whileHover={{ scale: 1.3, rotate: -10 }} whileTap={{ scale: 0.9 }} className="mt-4">
             <Gift className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
           </motion.div>
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>REGALOS</h3>
