@@ -34,7 +34,7 @@ const Information = () => {
         <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
           <Calendar className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>FECHA</h3>
-          <p className="font-serif uppercase tracking-wider" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>Sábado 18 de Abril, 2026</p>
+          <p className="font-serif uppercase tracking-wider" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)', fontWeight: 'bold' }}><h2>Sábado 18 de Abril, 2026</h2></p>
         </motion.div>
 
         <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">

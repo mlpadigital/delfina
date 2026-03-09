@@ -27,7 +27,7 @@
   --carriage-width: 80px;
   --slipper-width: 60px;
   --dress-code-size: 1.5rem;
-  --info-p-size: 1.25rem;
+  --info-p-size: 1.8rem;
   --section-padding: 60px 15px;
 
   font-family: var(--font-body);
@@ -54,7 +54,7 @@
     --carriage-width: 120px;
     --slipper-width: 80px;
     --dress-code-size: 2rem;
-    --info-p-size: 1.75rem;
+    --info-p-size: 2.8rem;
     --section-padding: 100px 20px;
   }
 }
