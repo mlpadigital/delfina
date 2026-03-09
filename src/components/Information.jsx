@@ -34,20 +34,20 @@ const Information = () => {
         <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
           <Calendar className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>FECHA</h3>
-          <p className="font-serif" style={{ color: 'var(--black-text)' }}>Sábado 18 de Abril, 2026</p>
+          <p className="font-serif uppercase tracking-wider" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>Sábado 18 de Abril, 2026</p>
         </motion.div>
 
         <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
           <Clock className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>HORARIO</h3>
-          <p className="font-serif" style={{ color: 'var(--black-text)' }}>21:00 hs</p>
+          <p className="font-serif uppercase tracking-wide" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>21:00 hs</p>
         </motion.div>
 
         {/* Location */}
         <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
           <MapPin className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>LUGAR</h3>
-          <p className="font-serif mb-4" style={{ color: 'var(--black-text)' }}>Salón Costa Luján</p>
+          <p className="font-serif uppercase tracking-wide" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>Salón Costa Luján</p>
           <p className="font-serif text-sm opacity-80 mb-6" style={{ color: 'var(--gold-text)' }}>Ex ruta 7 y Río Luján, Buenos Aires</p>
           <a
             href="https://www.google.com/maps/place/Sal%C3%B3n+Costa+Luj%C3%A1n/@-34.5541741,-59.2643043,12z/data=!4m10!1m2!2m1!1sEx+ruta+7+y+R%C3%ADo+Luj%C3%A1n,+Buenos+Aires!3m6!1s0x95bc7de43724518d:0x10c6c40add0eaedc!8m2!3d-34.5541741!4d-59.1201087!15sCiVFeCBydXRhIDcgeSBSw61vIEx1asOhbiwgQnVlbm9zIEFpcmVzWiYiJGV4IHJ1dGEgNyB5IHLDrW8gbHVqw6FuIGJ1ZW5vcyBhaXJlc5IBFmZ1bmN0aW9uX3Jvb21fZmFjaWxpdHmaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTjFjVTAzVW01QlJSQULgAQD6AQQIJhAi!16s%2Fg%2F11cmnjgg0s?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
