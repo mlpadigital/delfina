@@ -39,8 +39,8 @@ const Information = () => {
           <p className="font-serif uppercase tracking-wider" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>Sábado 18 de Abril, 2026</p>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
-          <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
+        <motion.div variants={itemVariants} className="glass-card pt-14 pb-10 px-6 text-center flex flex-col items-center">
+          <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }} className="mt-4">
             <Clock className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
           </motion.div>
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>HORARIO</h3>
