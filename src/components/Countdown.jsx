@@ -61,7 +61,7 @@ const Countdown = ({ targetDate }) => {
   );
 
   return (
-    <section className="section-padding" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <section className="pt-8 md:pt-16 pb-0 flex flex-col items-center">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -91,7 +91,7 @@ const Countdown = ({ targetDate }) => {
         transition={{ delay: 1.5, duration: 1 }}
         viewport={{ once: true }}
         className="font-heading tracking-wider uppercase" 
-        style={{ fontSize: '1.2rem', letterSpacing: '0.2em', color: 'var(--gold-text)', marginTop: '25px' }}
+        style={{ fontSize: '1.2rem', letterSpacing: '0.2em', color: 'var(--gold-text)', marginTop: '10px' }}
       >
         18 de Abril 2026
       </motion.p>

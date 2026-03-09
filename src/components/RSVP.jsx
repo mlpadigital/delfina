@@ -11,7 +11,7 @@ const RSVP = () => {
   };
 
   return (
-    <section className="section-padding flex flex-col items-center pb-32">
+    <section className="pt-8 md:pt-16 pb-32 flex flex-col items-center">
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}

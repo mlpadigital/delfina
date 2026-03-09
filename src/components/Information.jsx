@@ -32,20 +32,26 @@ const Information = () => {
       >
         {/* Date & Time */}
         <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
-          <Calendar className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
+          <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
+            <Calendar className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
+          </motion.div>
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>FECHA</h3>
           <p className="font-serif uppercase tracking-wider" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>Sábado 18 de Abril, 2026</p>
         </motion.div>
 
         <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
-          <Clock className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
+          <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
+            <Clock className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
+          </motion.div>
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>HORARIO</h3>
           <p className="font-serif uppercase tracking-wide" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>21:00 hs</p>
         </motion.div>
 
         {/* Location */}
         <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
-          <MapPin className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
+          <motion.div whileHover={{ scale: 1.2, rotate: 10 }} whileTap={{ scale: 0.9 }}>
+            <MapPin className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
+          </motion.div>
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>LUGAR</h3>
           <p className="font-serif uppercase tracking-wide" style={{ color: 'var(--black-text)', fontSize: 'var(--info-p-size)' }}>Salón Costa Luján</p>
           <p className="font-serif text-sm opacity-80 mb-6" style={{ color: 'var(--gold-text)' }}>Ex ruta 7 y Río Luján, Buenos Aires</p>
@@ -61,13 +67,15 @@ const Information = () => {
 
         {/* Gift Info */}
         <motion.div variants={itemVariants} className="glass-card p-10 text-center flex flex-col items-center">
-          <Gift className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
+          <motion.div whileHover={{ scale: 1.3, rotate: -10 }} whileTap={{ scale: 0.9 }}>
+            <Gift className="w-8 h-8 mb-6" style={{ color: 'var(--gold-text)' }} />
+          </motion.div>
           <h3 className="text-2xl mb-4 font-heading" style={{ color: 'var(--gold-text)' }}>REGALOS</h3>
           <p className="font-serif mb-6 text-sm md:text-base" style={{ color: 'var(--black-text)' }}>
             Tu presencia es lo más importante para mí. Si igualmente querés hacerme un regalo, podés hacerlo mediante el siguiente alias:
           </p>
           <h3 className="font-serif text-sm border border-gold-text/25 p-3 rounded" style={{ color: 'var(--gold-text)' }}>
-            Alias: delfiluzmp | Nombre:Delfina Luz Veltri
+            Alias: <b>delfiluzmp</b> | Nombre:Delfina Luz Veltri
           </h3>
         </motion.div>
       </motion.div>
