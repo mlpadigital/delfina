@@ -21,7 +21,7 @@ const RSVP = () => {
       >
         <h2 className="text-4xl md:text-5xl mb-8 font-heading" style={{ color: 'var(--black-text)' }}>¿Me acompañás?</h2>
         <p className="font-serif text-lg md:text-xl mb-10" style={{ color: 'var(--gold-text)' }}>
-          Por favor, confirmá tu asistencia antes del 1 de Abril para poder organizar todo perfectamente.
+          Por favor, confirmá tu asistencia para poder organizar todo perfectamente.
         </p>
 
         <motion.button

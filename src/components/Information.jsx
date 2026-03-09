@@ -67,7 +67,7 @@ const Information = () => {
             Tu presencia es lo más importante para mí. Si igualmente querés hacerme un regalo, podés hacerlo mediante el siguiente alias:
           </p>
           <h3 className="font-serif text-sm border border-gold-text/25 p-3 rounded" style={{ color: 'var(--gold-text)' }}>
-            Alias: delfiluzmp | Delfina Luz Veltri
+            Alias: delfiluzmp | Nombre:Delfina Luz Veltri
           </h3>
         </motion.div>
       </motion.div>
@@ -81,7 +81,7 @@ const Information = () => {
       >
         <p className="font-heading border-b border-gold-text inline-block pb-1"
           style={{ borderBottomColor: 'var(--gold-text)', color: 'var(--gold-text)', fontSize: 'var(--dress-code-size)' }}>
-          Dress Code:
+          <b>Dress Code:</b>
           <br /> Elegante / Elegante Sport
         </p>
         <motion.div

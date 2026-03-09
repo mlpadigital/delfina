@@ -3,7 +3,7 @@ import carriageImg from '../assets/carriage.png';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center section-padding">
+    <section className="min-h-[85vh] flex flex-col items-center justify-center text-center section-padding">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ const Hero = () => {
             lineHeight: '1.4',
             fontSize: 'var(--hero-quote-size)',
             maxWidth: '800px',
-            marginBottom: '3rem'
+            marginBottom: '1.5rem'
           }}>
           "Entre sueños, ilusión y un poquito de magia, llega la noche que imaginé desde niña. Te invito a ser parte de este momento único y celebrar juntos mis 15 años."
         </motion.p>
@@ -66,7 +66,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.6 }}
           transition={{ delay: 2, duration: 1 }}
-          className="text-2xl mt-8"
+          className="text-2xl mt-4"
           style={{ color: 'var(--gold-text)' }}
         >
           ↓
