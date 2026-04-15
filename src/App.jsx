@@ -3,7 +3,7 @@ import Background from './components/Background'
 import Hero from './components/Hero'
 import Countdown from './components/Countdown'
 import Information from './components/Information'
-import RSVP from './components/RSVP'
+import Location from './components/Location'
 import MusicPlayer from './components/MusicPlayer'
 import WelcomeScreen from './components/WelcomeScreen'
 import './App.css'
@@ -61,7 +61,7 @@ function App() {
         <Hero />
         <div className="relative z-10">
           <Countdown targetDate={targetDate} />
-          <RSVP />
+          <Location />
           <Information />
         </div>
 
