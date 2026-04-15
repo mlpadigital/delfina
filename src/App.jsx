@@ -1,30 +1,33 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Background from './components/Background'
 import Hero from './components/Hero'
 import Countdown from './components/Countdown'
 import Information from './components/Information'
 import Location from './components/Location'
 import MusicPlayer from './components/MusicPlayer'
-import WelcomeScreen from './components/WelcomeScreen'
 import './App.css'
 
 function App() {
   const targetDate = "2026-04-18T21:00:00";
-  const [isOpened, setIsOpened] = useState(false);
-  const [isMusicStarted, setIsMusicStarted] = useState(false);
+  const [isOpened, setIsOpened] = useState(true);
+  const [isMusicStarted, setIsMusicStarted] = useState(true);
   const [isInteracted, setIsInteracted] = useState(false);
 
-  const handleOpen = () => {
-    setIsOpened(true);
-  };
+  useEffect(() => {
+    const handleFirstInteraction = () => {
+      setIsInteracted(true);
+      window.removeEventListener('click', handleFirstInteraction);
+      window.removeEventListener('touchstart', handleFirstInteraction);
+    };
 
-  const handleStartMusic = () => {
-    setIsMusicStarted(true);
-  };
+    window.addEventListener('click', handleFirstInteraction);
+    window.addEventListener('touchstart', handleFirstInteraction);
 
-  const handleInteract = () => {
-    setIsInteracted(true);
-  };
+    return () => {
+      window.removeEventListener('click', handleFirstInteraction);
+      window.removeEventListener('touchstart', handleFirstInteraction);
+    };
+  }, []);
 
   return (
     <>
@@ -48,13 +51,8 @@ function App() {
         </defs>
       </svg>
 
-      {/* Pantalla de Bienvenida (Sobre Virtual) */}
-      <WelcomeScreen 
-        isOpened={isOpened} 
-        onOpen={handleOpen} 
-        onStartMusic={handleStartMusic} 
-        onInteract={handleInteract}
-      />
+      {/* Pantalla de Bienvenida eliminada por solicitud */}
+
 
       <main className="relative">
         <Background />
