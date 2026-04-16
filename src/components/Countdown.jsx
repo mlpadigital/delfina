@@ -90,10 +90,10 @@ const Countdown = ({ targetDate }) => {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
         viewport={{ once: true }}
-        className="font-heading tracking-wider uppercase" 
-        style={{ fontSize: '1.2rem', letterSpacing: '0.2em', color: 'var(--gold-text)', marginTop: '10px' }}
+        className="font-heading tracking-wider uppercase text-center" 
+        style={{ fontSize: '1.5rem', md: '2rem', letterSpacing: '0.2em', color: 'var(--gold-text)', marginTop: '20px' }}
       >
-        18 de Abril 2026
+        18 de Abril 2026 - 21:00 HS
       </motion.p>
     </section>
   );

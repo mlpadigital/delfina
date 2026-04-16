@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Background from './components/Background'
 import Hero from './components/Hero'
 import Countdown from './components/Countdown'
@@ -12,10 +12,20 @@ function App() {
   const [isOpened, setIsOpened] = useState(true);
   const [isMusicStarted, setIsMusicStarted] = useState(true);
   const [isInteracted, setIsInteracted] = useState(false);
+  const musicPlayerRef = useRef(null);
+
+  const handleStartMusic = () => {
+    setIsInteracted(true);
+    if (musicPlayerRef.current) {
+      musicPlayerRef.current.playMusic();
+    }
+  };
 
   useEffect(() => {
     const handleFirstInteraction = () => {
-      setIsInteracted(true);
+      if (!isInteracted) {
+        handleStartMusic();
+      }
       window.removeEventListener('click', handleFirstInteraction);
       window.removeEventListener('touchstart', handleFirstInteraction);
     };
@@ -27,7 +37,7 @@ function App() {
       window.removeEventListener('click', handleFirstInteraction);
       window.removeEventListener('touchstart', handleFirstInteraction);
     };
-  }, []);
+  }, [isInteracted]);
 
   return (
     <>
@@ -51,9 +61,6 @@ function App() {
         </defs>
       </svg>
 
-      {/* Pantalla de Bienvenida eliminada por solicitud */}
-
-
       <main className="relative">
         <Background />
         <Hero />
@@ -70,7 +77,12 @@ function App() {
       </main>
 
       {/* Reproductor Musical */}
-      <MusicPlayer isOpened={isOpened} isMusicStarted={isMusicStarted} isInteracted={isInteracted} />
+      <MusicPlayer 
+        ref={musicPlayerRef}
+        isOpened={isOpened} 
+        isMusicStarted={isMusicStarted} 
+        isInteracted={isInteracted} 
+      />
     </>
   )
 }

@@ -1,12 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useImperativeHandle, forwardRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Music, Pause } from 'lucide-react';
 
-const MusicPlayer = ({ isOpened, isMusicStarted, isInteracted }) => {
+const MusicPlayer = forwardRef(({ isOpened, isMusicStarted, isInteracted }, ref) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
   const hasUnlockedRef = useRef(false);
   const hasStartedRef = useRef(false);
+
+  useImperativeHandle(ref, () => ({
+    playMusic: () => {
+      if (audioRef.current) {
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(err => console.error("Error manual play:", err));
+      }
+    }
+  }));
 
   // Desbloqueo inmediato con volumen 0 para "engañar" al navegador
   useEffect(() => {
@@ -127,6 +137,6 @@ const MusicPlayer = ({ isOpened, isMusicStarted, isInteracted }) => {
       </motion.div>
     </>
   );
-};
+});
 
 export default MusicPlayer;

@@ -90,10 +90,19 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="text-3xl md:text-5xl font-heading mb-12"
+          className="text-3xl md:text-5xl font-heading mb-4"
           style={{ color: 'var(--gold-text)', letterSpacing: '0.1em' }}
         >
           18 de Abril 2026
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.8, duration: 1 }}
+          className="text-3xl md:text-5xl font-heading mb-12"
+          style={{ color: 'var(--gold-text)', letterSpacing: '0.1em', opacity: 1 }}
+        >
+          21:00 HS — SER PUNTUAL
         </motion.p>
 
         <motion.div
